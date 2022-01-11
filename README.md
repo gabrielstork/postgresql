@@ -10,7 +10,7 @@ Nesse repositório esterei explicando o que é **PostgreSQL**, mas antes de entr
 
 ## psql
 
-Nesse tutorial, não usaremos nenhuma interface gráfica para operar com os dados, e sim o `psql`, ou seja, realizaremos todaos os comandos pelo terminal do **PostgreSQL**, os comandos são os mesmos para diferentes sistemas operacionais.
+Nesse tutorial, não usaremos nenhuma interface gráfica para operar com os dados, e sim o `psql`, ou seja, realizaremos todos os comandos pelo terminal do **PostgreSQL**, os comandos são os mesmos para diferentes sistemas operacionais.
 
 ![image](https://user-images.githubusercontent.com/86558706/148416826-21720130-ee92-4e64-973d-05966ddd7b30.png)
 
@@ -76,3 +76,15 @@ mydatabase-#
 ```
 
 ## Excluindo um banco de dados
+
+Para deletar um banco de dados basta simplesmente digitar `DROP DEATABASE mydatabase;`. Criando e deletando um banco de dados:
+
+```console
+mydatabase=# CREATE DATABASE test;
+CREATE DATABASE
+mydatabase=# DROP DATABASE test;
+DROP DATABASE
+mydatabase=#
+```
+
+Tenha cuidado pois essa ação é irreversível, ou seja, uma vez deletado, você nunca mais poderá recuperá-lo. Por isso é sempre importante realizar back-ups regularmente dos seus dados.
