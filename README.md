@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Nesse repositório esterei explicando o que é **PostgreSQL**, mas antes de entrar no principal assunto, é preciso entender o que é um banco de dados: Como o próprio nome já diz, um banco da dados é um lugar no qual se armazena dados, mas muito além disso, é possível realizar diversas operações com esses dados, utilizando a linguagem **SQL** (*Structured Query Language*), uma linguagem de fácil entendimento e muito poderosa. Nesse caso, os dados são armazenados em tabelas, formadas por linhas, colunas e identificadores, ou seja, de uma forma relacional (no qual diferentes tabelas podem ter relações entre elas).
+Nesse repositório esterei explicando o que é o **PostgreSQL**, mas antes de entrar nesse assunto, é preciso entender o que é um banco de dados. Como o próprio nome já diz, um banco da dados é um ambiente no qual se armazena dados, mas muito além disso, é possível realizar diversas operações com esses dados, utilizando a linguagem **SQL** (*Structured Query Language*), uma das linguagens mais famosas, de fácil entendimento e muito poderosa. Nesse caso, os dados são armazenados em tabelas, formadas por linhas, colunas e identificadores, ou seja, de uma forma relacional (no qual diferentes tabelas podem ter relações entre si).
 
 **PostgreSQL** é um dos gerenciadores de bancos de dados mais utilizados em todo o mundo, sua fama deve-se ao fato de ser *open source*, robusto, possuir alta performance (lida bem com grandes quantidades de solicitações) e pela sua alta compatibilidade com diferentes padrões de linguagem. **PostgreSQL** usa, como sua linguagem principal, **SQL** e é com essa linguagem que realizamos as operações envolvendo os bancos de dados.
 
@@ -10,7 +10,7 @@ Nesse repositório esterei explicando o que é **PostgreSQL**, mas antes de entr
 
 ## psql
 
-Nesse tutorial, não usaremos nenhuma interface gráfica para operar com os dados, e sim o `psql`, ou seja, realizaremos todos os comandos pelo terminal do **PostgreSQL**, os comandos são os mesmos para diferentes sistemas operacionais.
+Nesse tutorial, não usaremos nenhuma interface gráfica para operar com os dados, e sim o `psql`, ou seja, realizaremos todos os comandos pelo terminal do **PostgreSQL**, os comandos são os mesmos para os diferentes sistemas operacionais.
 
 ![image](https://user-images.githubusercontent.com/86558706/148416826-21720130-ee92-4e64-973d-05966ddd7b30.png)
 
@@ -72,7 +72,6 @@ Para se conectar a um novo banco de dados é muito simples, basta digitar `\c my
 ```console
 postgres-# \c mydatabase
 You are now connected to database "mydatabase" as user "postgres".
-mydatabase-#
 ```
 
 ## Excluindo um banco de dados
@@ -84,7 +83,25 @@ mydatabase=# CREATE DATABASE test;
 CREATE DATABASE
 mydatabase=# DROP DATABASE test;
 DROP DATABASE
-mydatabase=#
 ```
 
 Tenha cuidado pois essa ação é irreversível, ou seja, uma vez deletado, você nunca mais poderá recuperá-lo. Por isso é sempre importante realizar back-ups regularmente dos seus dados.
+
+## Criando tabelas de dados
+
+Para criar uma nova tabela no seu banco de dados, você deve utilizar o comando `CREATE TABLE` seguido do nome, e como argumentos, o nome da coluna seguido do tipo de dado. Veja o exemplo a seguir para um melhor entendimento:
+
+```console
+mydatabase=# CREATE TABLE person(
+mydatabase(#    id INT,
+mydatabase(#    name VARCHAR(50),
+mydatabase(#    birth DATE
+mydatabase(# );
+CREATE TABLE
+```
+
+A partir do momento que você abre o parênteses e aperta `Enter`, o comando não será executado até que você feche o parênteses inicial.
+
+Observe a tabela abaixo.
+
+![image](https://user-images.githubusercontent.com/86558706/150802419-2a3111dd-0459-4567-910c-8cc4734a7560.png)
