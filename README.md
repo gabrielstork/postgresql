@@ -1,5 +1,7 @@
 # postgresql
 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="180" height="180" />
+
 ## Introdução
 
 Nesse repositório esterei explicando o que é o **PostgreSQL**, mas antes de entrar nesse assunto, é preciso entender o que é um banco de dados. Como o próprio nome já diz, um banco da dados é um ambiente no qual se armazena dados, mas muito além disso, é possível realizar diversas operações com esses dados, utilizando a linguagem **SQL** (*Structured Query Language*), uma das linguagens mais famosas, de fácil entendimento e muito poderosa. Nesse caso, os dados são armazenados em tabelas, formadas por linhas, colunas e identificadores, ou seja, de uma forma relacional (no qual diferentes tabelas podem ter relações entre si).
@@ -105,3 +107,28 @@ A partir do momento que você abre o parênteses e aperta `Enter`, o comando nã
 Observe a tabela abaixo.
 
 ![image](https://user-images.githubusercontent.com/86558706/150802419-2a3111dd-0459-4567-910c-8cc4734a7560.png)
+
+## Verificando as tabelas de dados
+
+Para verificar todas as tableas de dados em seu banco de dados, use o comando `\d`, a letra `d` vem da palavra *describe* (em portugês, descrever).
+
+```console
+mydatabase=# \d
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+----------
+ public | person | table | postgres
+(1 row)
+```
+
+Para detalhar alguma tabela, repita o comando anterior e em seguida digite o nome da tabela.
+
+```console
+mydatabase=# \d person
+                      Table "public.person"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ id     | integer               |           |          |
+ name   | character varying(50) |           |          |
+ birth  | date                  |           |          |
+```
